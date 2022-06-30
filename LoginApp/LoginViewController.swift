@@ -12,7 +12,6 @@ class LoginViewController: UIViewController {
     @IBOutlet var userNameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,8 +25,16 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginPressed() {
+        print("what is it?")
 
+        
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
+    
+    
     
     @IBAction func hintPressed() {
         
