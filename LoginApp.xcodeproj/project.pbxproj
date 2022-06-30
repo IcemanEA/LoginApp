@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		483EFA5B286E469300DF0FAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483EFA5A286E469300DF0FAF /* AppDelegate.swift */; };
 		483EFA5D286E469300DF0FAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483EFA5C286E469300DF0FAF /* SceneDelegate.swift */; };
-		483EFA5F286E469300DF0FAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483EFA5E286E469300DF0FAF /* ViewController.swift */; };
+		483EFA5F286E469300DF0FAF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483EFA5E286E469300DF0FAF /* LoginViewController.swift */; };
 		483EFA62286E469300DF0FAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483EFA60286E469300DF0FAF /* Main.storyboard */; };
 		483EFA64286E469300DF0FAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 483EFA63286E469300DF0FAF /* Assets.xcassets */; };
 		483EFA67286E469300DF0FAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483EFA65286E469300DF0FAF /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		483EFA57286E469300DF0FAF /* LoginApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		483EFA5A286E469300DF0FAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		483EFA5C286E469300DF0FAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		483EFA5E286E469300DF0FAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		483EFA5E286E469300DF0FAF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		483EFA61286E469300DF0FAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		483EFA63286E469300DF0FAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		483EFA66286E469300DF0FAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 			children = (
 				483EFA5A286E469300DF0FAF /* AppDelegate.swift */,
 				483EFA5C286E469300DF0FAF /* SceneDelegate.swift */,
-				483EFA5E286E469300DF0FAF /* ViewController.swift */,
+				483EFA5E286E469300DF0FAF /* LoginViewController.swift */,
 				483EFA60286E469300DF0FAF /* Main.storyboard */,
 				483EFA63286E469300DF0FAF /* Assets.xcassets */,
 				483EFA65286E469300DF0FAF /* LaunchScreen.storyboard */,
@@ -138,7 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				483EFA5F286E469300DF0FAF /* ViewController.swift in Sources */,
+				483EFA5F286E469300DF0FAF /* LoginViewController.swift in Sources */,
 				483EFA5B286E469300DF0FAF /* AppDelegate.swift in Sources */,
 				483EFA5D286E469300DF0FAF /* SceneDelegate.swift in Sources */,
 			);
