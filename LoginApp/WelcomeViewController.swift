@@ -8,15 +8,14 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
+        
+    @IBOutlet var welcomeLabel: UILabel!
+    
+    var username: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("load second")
+        welcomeLabel.text = "Welcome, \(username ?? "")!"
     }
-    
-
-
-    // MARK: - Navigation
-
 }

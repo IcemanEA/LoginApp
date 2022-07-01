@@ -36,7 +36,6 @@
                                         <state key="normal" title="Log In"/>
                                         <connections>
                                             <action selector="loginPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="0JQ-e8-pTF"/>
-                                            <segue destination="dKa-bU-YEb" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="IQn-4t-IzK"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1tc-90-vSl">
@@ -47,15 +46,15 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Forgot User Name?"/>
                                                 <connections>
-                                                    <action selector="hintPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="neZ-3N-cLt"/>
+                                                    <action selector="hintPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lXX-c4-SL8"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEu-fH-7PD">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEu-fH-7PD">
                                                 <rect key="frame" x="133" y="0.0" width="123" height="30"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Forgot Password?"/>
                                                 <connections>
-                                                    <action selector="hintPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="Da3-fu-uvC"/>
+                                                    <action selector="hintPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aUP-zt-XZ9"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -75,6 +74,7 @@
                     <connections>
                         <outlet property="passwordTF" destination="4be-uF-eGU" id="Vwz-0p-Imq"/>
                         <outlet property="userNameTF" destination="vuw-wV-CGU" id="et6-Ep-pDQ"/>
+                        <segue destination="dKa-bU-YEb" kind="presentation" identifier="login" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="WLk-ob-tDt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -127,6 +127,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rBV-4a-4rB"/>
+                    <connections>
+                        <outlet property="welcomeLabel" destination="i5j-Qj-idY" id="VKd-j0-aF1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MWO-5r-NT3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="wXe-6T-Rzb" userLabel="Exit" sceneMemberID="exit"/>
