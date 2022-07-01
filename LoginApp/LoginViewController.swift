@@ -24,17 +24,21 @@ class LoginViewController: UIViewController {
         passwordTF.resignFirstResponder()
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
+
+    @IBAction func unwind(_ unwindSegue: UIStoryboardSegue) {
+        guard let loginVC = unwindSegue.destination as? LoginViewController else { return }
+        loginVC.userNameTF.text = nil
+        loginVC.passwordTF.text = nil
+    }
+    
     @IBAction func loginPressed() {
         print("what is it?")
 
         
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-    }
-    
-    
     
     @IBAction func hintPressed() {
         
