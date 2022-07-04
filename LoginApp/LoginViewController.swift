@@ -12,14 +12,15 @@ class LoginViewController: UIViewController {
     @IBOutlet var usernameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
-    let username = "Debash"
-    let password = "1234"
+    private let username = "Debash"
+    private let password = "1234"
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         
-        usernameTF.resignFirstResponder()
-        passwordTF.resignFirstResponder()
+        //usernameTF.resignFirstResponder()
+        //passwordTF.resignFirstResponder()
+        view.endEditing(true)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -29,37 +30,42 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func unwind(_ unwindSegue: UIStoryboardSegue) {
-        guard let loginVC = unwindSegue.destination as? LoginViewController else { return }
-        loginVC.usernameTF.text = nil
-        loginVC.passwordTF.text = nil
+//        guard let loginVC = unwindSegue.destination as? LoginViewController else { return }
+//        loginVC.usernameTF.text = nil
+//        loginVC.passwordTF.text = nil
+        usernameTF.text = nil
+        passwordTF.text = nil
     }
     
     @IBAction func loginPressed() {
         if usernameTF.text != username || passwordTF.text != password {
-            showHint(with: "Invalid login or password",
-                     and: "Please, enter correct login or password")
-            passwordTF.text = nil
+            showHint(
+                with: "Invalid login or password",
+                and: "Please, enter correct login or password",
+                textField: passwordTF
+            )
             return
         }
         
-        performSegue(withIdentifier: "login", sender: self)
+        performSegue(withIdentifier: "login", sender: nil)
     }
     
     @IBAction func hintPressed(_ sender: UIButton) {
-        if sender.tag == 0 {
-            showHint(with: "Ooops!", and: "Your name is \(username) 🤓")
-        } else {
-            showHint(with: "Ooops!", and: "Your password is \(password) 😳")
-        }
+        sender.tag == 0
+            ? showHint(with: "Ooops!", and: "Your name is \(username) 🤓")
+            : showHint(with: "Ooops!", and: "Your password is \(password) 😳")
     }
         
-    private func showHint(with title: String, and message: String) {
+    private func showHint(with title: String, and message: String, textField: UITextField? = nil) {
         let alertController = UIAlertController(
             title: title,
             message: message,
             preferredStyle: .alert
         )
-        alertController.addAction(UIAlertAction(title: "Ok", style: .default))
+        let okAction = UIAlertAction(title: "Ok", style: .default) { _ in
+            textField?.text = ""
+        }
+        alertController.addAction(okAction)
         present(alertController, animated: true)
     }
 }

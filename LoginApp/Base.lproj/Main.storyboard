@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Bbq-ae-zIa">
-                                <rect key="frame" x="32" y="224" width="256" height="191"/>
+                                <rect key="frame" x="32" y="178.5" width="256" height="191"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vuw-wV-CGU">
                                         <rect key="frame" x="0.0" y="0.0" width="256" height="34"/>
@@ -65,9 +65,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Bbq-ae-zIa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="180" id="5iM-RA-4ho"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Bbq-ae-zIa" secondAttribute="trailing" constant="32" id="KLB-Kn-x3y"/>
                             <constraint firstItem="Bbq-ae-zIa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="bAo-8R-D97"/>
+                            <constraint firstItem="Bbq-ae-zIa" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-32" id="pK9-g6-K0V"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0ur-c1-vXt"/>
