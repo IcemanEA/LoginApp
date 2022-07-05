@@ -140,6 +140,7 @@
                     <navigationItem key="navigationItem" id="rBV-4a-4rB"/>
                     <connections>
                         <outlet property="gradientView" destination="IRJ-oy-Qs4" id="wrs-N7-tXU"/>
+                        <outlet property="imageView" destination="hOM-B1-bYa" id="PXm-WL-wnQ"/>
                         <outlet property="welcomeLabel" destination="i5j-Qj-idY" id="VKd-j0-aF1"/>
                     </connections>
                 </viewController>
@@ -181,6 +182,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textView" destination="Tom-3a-cJ0" id="WQ1-vs-j5Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KgK-Ct-bfs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -208,6 +212,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="VJV-gQ-cao"/>
+                    <connections>
+                        <outlet property="imageView" destination="TbD-dC-twD" id="nrw-BI-MyH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WYS-Ec-ZcP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

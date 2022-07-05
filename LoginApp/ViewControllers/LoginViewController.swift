@@ -12,14 +12,12 @@ class LoginViewController: UIViewController {
     @IBOutlet var usernameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
-    private let username = "Debash"
+    private let username = "debash"
     private let password = "1234"
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         
-        //usernameTF.resignFirstResponder()
-        //passwordTF.resignFirstResponder()
         view.endEditing(true)
     }
 
@@ -30,16 +28,14 @@ class LoginViewController: UIViewController {
         viewControllers.forEach { viewController in
             if let welcomeVC = viewController as? WelcomeViewController {
                 welcomeVC.username = usernameTF.text
+            } else if let siteVC = viewController as? SiteViewController {
+                siteVC.site = "https://vk.com/iceman"
             }
+            
         }
-        
-        
     }
 
     @IBAction func unwind(_ unwindSegue: UIStoryboardSegue) {
-//        guard let loginVC = unwindSegue.destination as? LoginViewController else { return }
-//        loginVC.usernameTF.text = nil
-//        loginVC.passwordTF.text = nil
         usernameTF.text = nil
         passwordTF.text = nil
     }

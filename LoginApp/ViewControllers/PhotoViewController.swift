@@ -9,9 +9,15 @@ import UIKit
 
 class PhotoViewController: UIViewController {
 
+    @IBOutlet var imageView: UIImageView!
+    
+    var image: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let image = image {
+            imageView.image = UIImage(named: image)
+        }
     }
 }

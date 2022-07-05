@@ -11,20 +11,26 @@ class WelcomeViewController: UIViewController {
         
     @IBOutlet var welcomeLabel: UILabel!
     @IBOutlet var gradientView: UIView!
+    @IBOutlet var imageView: UIImageView!
     
     var username: String!
-    
-//    private let gradientLayer = CAGradientLayer()
+    var image: String! = "iceman"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        welcomeLabel.text = "Welcome, \(username ?? "")!"
         
         let gradientLayer = CAGradientLayer()
-        
         gradientView.layer.addSublayer(gradientLayer)
         gradientLayer.colors = [UIColor.systemPink.cgColor, UIColor.systemBlue.cgColor]
         gradientLayer.frame = view.frame
+        
+        welcomeLabel.text = "Welcome,\n\(username ?? "")!"
+        if let image = image {
+            imageView.image = UIImage(named: image)
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        imageView.layer.cornerRadius = imageView.frame.height / 2
     }
 }

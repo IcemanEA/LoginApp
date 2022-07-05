@@ -12,10 +12,12 @@ class SiteViewController: UIViewController {
 
     @IBOutlet var webView: WKWebView!
     
-    private let site: String = "http://apple.com"
+    var site: String! = "http://apple.com"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        guard let url = URL(string: site) else { return }
+        webView.load(URLRequest(url: url))
     }
 }
