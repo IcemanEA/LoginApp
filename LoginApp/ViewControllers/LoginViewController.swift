@@ -24,9 +24,16 @@ class LoginViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
+        guard let tabBarVC = segue.destination as? UITabBarController else { return }
+        guard let viewControllers = tabBarVC.viewControllers else { return }
         
-        welcomeVC.username = usernameTF.text
+        viewControllers.forEach { viewController in
+            if let welcomeVC = viewController as? WelcomeViewController {
+                welcomeVC.username = usernameTF.text
+            }
+        }
+        
+        
     }
 
     @IBAction func unwind(_ unwindSegue: UIStoryboardSegue) {
