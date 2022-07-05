@@ -56,13 +56,8 @@ class LoginViewController: UIViewController {
             return
         }
         
-        guard let user = User.getUserFrom(username: username) else {
+        guard let user = User.getUserFrom(username: username), passwordTF.text == user.password else {
             showHint(with: errorTitle, and: errorMessage)
-            return
-        }
-        
-        guard passwordTF.text == user.password else {
-            showHint(with: errorTitle, and: errorMessage, textField: passwordTF)
             return
         }
         
