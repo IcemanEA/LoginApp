@@ -18,6 +18,7 @@
 		484BF2CF2874DE41002EBE97 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484BF2CE2874DE41002EBE97 /* PersonViewController.swift */; };
 		484BF2D12874DE58002EBE97 /* SiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484BF2D02874DE58002EBE97 /* SiteViewController.swift */; };
 		484BF2D32874DEBA002EBE97 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484BF2D22874DEBA002EBE97 /* PhotoViewController.swift */; };
+		484BF2D52874EB40002EBE97 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484BF2D42874EB40002EBE97 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		484BF2CE2874DE41002EBE97 /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		484BF2D02874DE58002EBE97 /* SiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteViewController.swift; sourceTree = "<group>"; };
 		484BF2D22874DEBA002EBE97 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		484BF2D42874EB40002EBE97 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 		484BF2CD2874DDED002EBE97 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				484BF2D42874EB40002EBE97 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				483EFA6F286E55BD00DF0FAF /* WelcomeViewController.swift in Sources */,
 				483EFA5B286E469300DF0FAF /* AppDelegate.swift in Sources */,
 				484BF2D12874DE58002EBE97 /* SiteViewController.swift in Sources */,
+				484BF2D52874EB40002EBE97 /* User.swift in Sources */,
 				484BF2D32874DEBA002EBE97 /* PhotoViewController.swift in Sources */,
 				483EFA5D286E469300DF0FAF /* SceneDelegate.swift in Sources */,
 				484BF2C82874D717002EBE97 /* TabBarViewController.swift in Sources */,

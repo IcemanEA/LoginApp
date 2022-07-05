@@ -12,8 +12,8 @@ class LoginViewController: UIViewController {
     @IBOutlet var usernameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
-    private let username = "debash"
-    private let password = "1234"
+    private let users = User.getUsers()
+    private var openPerson: Person? = nil
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
@@ -27,9 +27,16 @@ class LoginViewController: UIViewController {
         
         viewControllers.forEach { viewController in
             if let welcomeVC = viewController as? WelcomeViewController {
-                welcomeVC.username = usernameTF.text
+                welcomeVC.username = openPerson?.name
+                welcomeVC.image = openPerson?.image
             } else if let siteVC = viewController as? SiteViewController {
-                siteVC.site = "https://vk.com/iceman"
+                siteVC.site = openPerson?.site
+            } else if let navigationVC = viewController as? UINavigationController {
+                if let personVC = navigationVC.topViewController as? PersonViewController {
+                    personVC.name = openPerson?.name
+                    personVC.image = openPerson?.image
+                    personVC.about = openPerson?.about
+                }
             }
             
         }
@@ -41,22 +48,45 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginPressed() {
-        if usernameTF.text != username || passwordTF.text != password {
-            showHint(
-                with: "Invalid login or password",
-                and: "Please, enter correct login or password",
-                textField: passwordTF
-            )
+        let errorTitle = "Invalid login or password"
+        let errorMessage = "Please, enter correct username or password"
+        
+        guard let username = usernameTF.text else {
+            showHint(with: errorTitle, and: "Please, enter username!")
             return
         }
         
-        performSegue(withIdentifier: "login", sender: nil)
+        guard let user = User.getUserFrom(username: username) else {
+            showHint(with: errorTitle, and: errorMessage)
+            return
+        }
+        
+        guard passwordTF.text == user.password else {
+            showHint(with: errorTitle, and: errorMessage, textField: passwordTF)
+            return
+        }
+        
+        if let person = Person.getPersonFrom(username: username) {
+            openPerson = person
+            performSegue(withIdentifier: "login", sender: nil)
+        }
     }
     
     @IBAction func hintPressed(_ sender: UIButton) {
-        sender.tag == 0
-            ? showHint(with: "Ooops!", and: "Your name is \(username) 🤓")
-            : showHint(with: "Ooops!", and: "Your password is \(password) 😳")
+        var text = ""
+        
+        if sender.tag == 0 {
+            text = "You can use this names: \n"
+            for user in users {
+                text += "\(user.username)\n"
+            }
+        } else {
+            for user in users {
+                text += "Password for \(user.username) is \(user.password) \n"
+            }
+        }
+
+        showHint(with: "Ooops!", and: "\(text) 😳")
     }
         
     private func showHint(with title: String, and message: String, textField: UITextField? = nil) {
