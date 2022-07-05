@@ -32,13 +32,11 @@ class LoginViewController: UIViewController {
             } else if let siteVC = viewController as? SiteViewController {
                 siteVC.site = openPerson?.site
             } else if let navigationVC = viewController as? UINavigationController {
-                if let personVC = navigationVC.topViewController as? PersonViewController {
-                    personVC.name = openPerson?.name
-                    personVC.image = openPerson?.image
-                    personVC.about = openPerson?.about
-                }
+                guard let personVC = navigationVC.topViewController as? PersonViewController else { return }
+                personVC.name = openPerson?.name
+                personVC.image = openPerson?.image
+                personVC.about = openPerson?.about
             }
-            
         }
     }
 
