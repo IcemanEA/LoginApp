@@ -10,7 +10,6 @@ import UIKit
 class WelcomeViewController: UIViewController {
         
     @IBOutlet var welcomeLabel: UILabel!
-    @IBOutlet var gradientView: UIView!
     @IBOutlet var imageView: UIImageView!
     
     var username: String!
@@ -20,7 +19,7 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         
         let gradientLayer = CAGradientLayer()
-        gradientView.layer.addSublayer(gradientLayer)
+        view.layer.insertSublayer(gradientLayer, at: 0)
         gradientLayer.colors = [UIColor.systemPink.cgColor, UIColor.systemBlue.cgColor]
         gradientLayer.frame = view.frame
         
