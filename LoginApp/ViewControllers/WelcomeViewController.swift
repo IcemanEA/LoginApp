@@ -12,8 +12,7 @@ class WelcomeViewController: UIViewController {
     @IBOutlet var welcomeLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
     
-    var username: String!
-    var image: String! = "iceman"
+    var openUser: User!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +22,8 @@ class WelcomeViewController: UIViewController {
         gradientLayer.colors = [UIColor.systemPink.cgColor, UIColor.systemBlue.cgColor]
         gradientLayer.frame = view.frame
         
-        welcomeLabel.text = "Welcome,\n\(username ?? "")!"
-        if let image = image {
-            imageView.image = UIImage(named: image)
-        }
+        welcomeLabel.text = "Welcome,\n\(openUser.person.name)!"
+        imageView.image = UIImage(named: openUser.person.image)
     }
     
     override func viewDidLayoutSubviews() {

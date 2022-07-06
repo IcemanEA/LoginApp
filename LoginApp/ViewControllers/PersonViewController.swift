@@ -11,20 +11,18 @@ class PersonViewController: UIViewController {
 
     @IBOutlet var textView: UITextView!
     
-    var about: String! = "Text"
-    var name: String! = "firstName lastName"
-    var image: String! = "iceman"
+    var openUser: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = name
-        textView.text = about
+        title = openUser.person.name
+        textView.text = openUser.person.about
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let photoVC = segue.destination as? PhotoViewController else { return }
         
-        photoVC.image = image
+        photoVC.image = openUser.person.image
     }
 }
