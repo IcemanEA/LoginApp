@@ -12,7 +12,7 @@ class LoginViewController: UIViewController {
     @IBOutlet var usernameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
-    private let users = User.getUsers()
+    private let user = User.getUser()
     private var person: Person?
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -43,16 +43,9 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginPressed() {
-        let errorTitle = "Invalid login or password"
-        let errorMessage = "Please, enter correct username or password"
-        
-        guard let username = usernameTF.text else {
-            showHint(with: errorTitle, and: "Please, enter username!")
-            return
-        }
-        
-        guard let user = User.getUserFrom(username: username), passwordTF.text == user.password else {
-            showHint(with: errorTitle, and: errorMessage)
+        guard usernameTF.text == user.username, passwordTF.text == user.password else {
+            showHint(with: "Invalid login or password",
+                     and: "Please, enter correct username or password")
             return
         }
         
@@ -61,20 +54,9 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func hintPressed(_ sender: UIButton) {
-        var text = ""
-        
-        if sender.tag == 0 {
-            text = "You can use this names: \n"
-            for user in users {
-                text += "\(user.username)\n"
-            }
-        } else {
-            for user in users {
-                text += "Password for \(user.username) is \(user.password) \n"
-            }
-        }
-
-        showHint(with: "Ooops!", and: "\(text) 😳")
+        sender.tag == 0
+            ? showHint(with: "Oops!", and: "Your name is \(user.username) 😉")
+            : showHint(with: "Oops!", and: "Your password is \(user.password) 😉")
     }
         
     private func showHint(with title: String, and message: String, textField: UITextField? = nil) {
