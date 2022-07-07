@@ -29,7 +29,6 @@ struct User {
                 username: "debash",
                 password: "1234",
                 person: Person(
-                    username: "debash",
                     firstName: "Алексей",
                     lastname: "Ефимов",
                     site: "https://debash.medium.com",
@@ -44,7 +43,6 @@ struct User {
                 username: "iceman",
                 password: "1234",
                 person: Person(
-                    username: "iceman",
                     firstName: "Егор",
                     lastname: "Ледков",
                     site: "http://vk.com/iceman",
@@ -62,7 +60,6 @@ struct User {
 }
 
 struct Person {
-    let username: String
     let firstName: String
     let lastname: String
     let site: String
