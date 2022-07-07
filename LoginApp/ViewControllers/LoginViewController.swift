@@ -13,7 +13,6 @@ class LoginViewController: UIViewController {
     @IBOutlet var passwordTF: UITextField!
     
     private let user = User.getUser()
-    private var person: Person?
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
@@ -27,12 +26,12 @@ class LoginViewController: UIViewController {
         
         viewControllers.forEach { viewController in
             if let welcomeVC = viewController as? WelcomeViewController {
-                welcomeVC.person = person
+                welcomeVC.person = user.person
             } else if let siteVC = viewController as? SiteViewController {
-                siteVC.person = person
+                siteVC.person = user.person
             } else if let navigationVC = viewController as? UINavigationController {
                 guard let personVC = navigationVC.topViewController as? PersonViewController else { return }
-                personVC.person = person
+                personVC.person = user.person
             }
         }
     }
@@ -49,7 +48,6 @@ class LoginViewController: UIViewController {
             return
         }
         
-        person = user.person
         performSegue(withIdentifier: "login", sender: nil)
     }
     
